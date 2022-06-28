@@ -1,0 +1,18 @@
+.basket-menu-item {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket-menu-item_price {
+    display: flex;
+    align-items: center;
+
+}
+
+.basket-item_delete-icon {
+    margin-left: 5px;
+    cursor: pointer;
+}
