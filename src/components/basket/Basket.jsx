@@ -1,32 +1,40 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useState, useCallback } from 'react'
 import { useNavigate } from "react-router-dom"
 import { TiShoppingCart } from "react-icons/ti"
 import { BasketMenu } from "../basket-menu/BasketMenu"
 import { BasketBadge } from "../basket-badge/BasketBadge"
 import { calcTotalPrice } from "../../utils"
+import { basketOnOff, basketOff, logoOff } from "../../store/slice/openClose"
 import "./Basket.css"
 
 export const Basket = () => {
-    const [basketVisible, setBasketVisible] = useState(false)
     const items = useSelector(state => state.basket.itemsInBasket)
-    const totalPrice = calcTotalPrice(items)
+    const popover = useSelector(state => state.openClose.basketPopover)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
-    const handleClick = useCallback(() => {
-        setBasketVisible(false)
+    const handleClick = useCallback((e) => {
+        e.stopPropagation()
+        dispatch(basketOff())
+        dispatch(logoOff())
         navigate("/order")
     }, [navigate])
+
+    const openClosePopover = (e) => {
+        e.stopPropagation()
+        console.log(popover);
+        dispatch(basketOnOff())
+        dispatch(logoOff())
+    }
 
     return (
         <div className='basket'>
             <BasketBadge quantity={items.length} />
-            <TiShoppingCart size={25} className="basket-icon" onClick={() => setBasketVisible(!basketVisible)} />
+            <TiShoppingCart size={25} className="basket-icon" onClick={(e) => openClosePopover(e)} />
 
-            {totalPrice > 0 ?
-                <span className='basket_total-price'>{totalPrice}</span> : null}
-            {basketVisible && <BasketMenu items={items} onClick={handleClick} />}
+            {popover && <BasketMenu items={items} onClick={(e) => handleClick(e)} />}
         </div>
     )
 }

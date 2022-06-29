@@ -11,16 +11,15 @@ export const OrderPage = () => {
     }
     return (
         <div className='order-page'>
+            <div className="order-page_total-price">
+                <span>
+                    {items.length} {enumerate(items.length, ['товар', 'товара', 'товаров'])} на сумму   {calcTotalPrice(items)} tg
+                </span>
+            </div>
             <div className="order-page_left">
                 {items.map(game => <OrderItem game={game} key={game.title} />)}
             </div>
-            <div className="order-page_right">
-                <div className="order-page_total-price">
-                    <span>
-                        {items.length} {enumerate(items.length, ['товар', 'товара', 'товаров'])} на сумму{calcTotalPrice(items)} tg
-                    </span>
-                </div>
-            </div>
+
         </div>
     )
 }
