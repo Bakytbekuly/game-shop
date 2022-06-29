@@ -1,11 +1,14 @@
 import React from 'react'
+import { useAuth } from "../../hooks/use-auth"
 import { calcTotalPrice } from '../../utils'
 import { Button } from "../button/Button"
 import { BasketMenuItem } from '../basket-menu-item/BasketMenuItem'
+import { Notice } from "../basket-notice-text/Notice"
 import "./BasketMenu.css"
 
 
 export const BasketMenu = ({ items, onClick }) => {
+    const { isAuth } = useAuth()
     return (
         <div className='basket-menu'>
             <div className="basket-menu_games-list">
@@ -20,7 +23,8 @@ export const BasketMenu = ({ items, onClick }) => {
                             <span>Итого:</span>
                             <span>{calcTotalPrice(items)} tg</span>
                         </div>
-                        <Button type="primary" size="m" onClick={onClick}>Оформить заказ</Button>
+                        {isAuth ? <Button type="primary" size="m" onClick={onClick}>Оформить заказ</Button> :
+                            <Notice />}
                     </div>
                     : null
             }

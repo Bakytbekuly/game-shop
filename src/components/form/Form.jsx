@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./Form.css"
 
 export const Form = ({ title, handleClick }) => {
+
     const [email, SetEmail] = useState('')
     const [pass, setPass] = useState('')
     return (

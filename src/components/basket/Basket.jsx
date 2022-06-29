@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useState, useCallback } from 'react'
+import { useCallback } from 'react'
 import { useNavigate } from "react-router-dom"
 import { TiShoppingCart } from "react-icons/ti"
 import { BasketMenu } from "../basket-menu/BasketMenu"
 import { BasketBadge } from "../basket-badge/BasketBadge"
-import { calcTotalPrice } from "../../utils"
 import { basketOnOff, basketOff, logoOff } from "../../store/slice/openClose"
+import { useAuth } from "../../hooks/use-auth"
 import "./Basket.css"
 
 export const Basket = () => {
@@ -14,17 +14,20 @@ export const Basket = () => {
     const popover = useSelector(state => state.openClose.basketPopover)
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const { isAuth } = useAuth()
 
     const handleClick = useCallback((e) => {
         e.stopPropagation()
         dispatch(basketOff())
         dispatch(logoOff())
-        navigate("/order")
+        if (isAuth) {
+            navigate("/order")
+        }
+
     }, [navigate])
 
     const openClosePopover = (e) => {
         e.stopPropagation()
-        console.log(popover);
         dispatch(basketOnOff())
         dispatch(logoOff())
     }

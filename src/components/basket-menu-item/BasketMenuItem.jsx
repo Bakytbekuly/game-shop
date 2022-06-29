@@ -13,7 +13,7 @@ export const BasketMenuItem = ({ game }) => {
 
     return (
         <div className='basket-menu-item'>
-            <span>{game.title}</span>
+            <span className='basket-menu-item_title'>{game.title}</span>
             <div className='basket-menu-item_price'>
                 <span>{game.price} tg</span>
                 <MdDeleteForever

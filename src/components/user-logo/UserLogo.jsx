@@ -10,7 +10,7 @@ export const UserLogo = ({ size }) => {
     const dispatch = useDispatch()
     const popover = useSelector(state => state.openClose.logoPopover)
     const { isAuth } = useAuth()
-    console.log(popover);
+
     const handleClick = (e) => {
         e.stopPropagation()
         dispatch(logoOnOff())
