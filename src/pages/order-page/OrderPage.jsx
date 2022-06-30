@@ -7,12 +7,12 @@ import "./OrderPage.css"
 export const OrderPage = () => {
     const items = useSelector(state => state.basket.itemsInBasket)
     if (items.length < 1) {
-        return <h1>Ваша корзина пуста...</h1>
+        return <h1 className='title-order-page'>Ваша корзина пуста...</h1>
     }
     return (
         <div className='order-page'>
             <div className="order-page_total-price">
-                <span>
+                <span className='title-order-page'>
                     {items.length} {enumerate(items.length, ['товар', 'товара', 'товаров'])} на сумму   {calcTotalPrice(items)} tg
                 </span>
             </div>
