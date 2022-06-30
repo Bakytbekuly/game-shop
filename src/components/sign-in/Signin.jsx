@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux"
 import { useNavigate, useLocation } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { setUser } from "../../store/slice/userSlice"
-import { Form } from "../form/Form"
-import "./Signin.css"
+import { FormSignIn } from "../form-sign-in/FormSignIn"
+
 
 export const Signin = () => {
     const dispatch = useDispatch()
@@ -31,8 +31,7 @@ export const Signin = () => {
     }
     return (
         <div>
-            <Form
-                title="sign in"
+            <FormSignIn
                 handleClick={handleLogin}
             />
         </div>

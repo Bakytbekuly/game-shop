@@ -1,13 +1,15 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { useAuth } from "../../hooks/use-auth"
-import { removeUser } from '../../store/slice/userSlice'
+import React, { useEffect } from 'react'
 import { GAMES } from "../../constance/data-games"
 import { GameItem } from "../../components/game-item/GameItem"
+import { useDispatch, useSelector } from 'react-redux'
 import "./HomePage.css"
-import { Link } from 'react-router-dom'
+
 
 export const HomePage = () => {
+
+    useEffect(() => {
+
+    }, [])
 
     return (
         <>

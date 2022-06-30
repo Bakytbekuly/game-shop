@@ -5,11 +5,10 @@ import "./LoginPage.css"
 
 export const LoginPage = () => {
     return (
-        <div>
-            <h1>Login</h1>
+        <div className='sign-in-wrapper'>
             <Signin />
             <p>
-                Or <Link to="/register">register</Link>
+                Регистрация <Link to="/register" className='text-sign-in-link'>SIGN UP</Link>
             </p>
 
         </div>

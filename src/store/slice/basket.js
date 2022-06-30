@@ -14,9 +14,12 @@ const basketSlice = createSlice({
         deleteItemFromBasket: (state, action) => {
             state.itemsInBasket = state.itemsInBasket.filter(game => game.id !== action.payload)
         },
+        deleteAllItem: (state) => {
+            state.itemsInBasket = []
+        }
     }
 });
 
-export const { setItemInBasket, deleteItemFromBasket } = basketSlice.actions
+export const { setItemInBasket, deleteItemFromBasket, deleteAllItem } = basketSlice.actions
 
 export default basketSlice.reducer

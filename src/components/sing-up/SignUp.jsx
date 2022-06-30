@@ -1,10 +1,10 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux'
-import { Form } from "../form/Form"
+import { FormSignUp } from "../form-sign-up/FormSignUp"
 import { setUser } from "../../store/slice/userSlice"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import "./SignUp.css"
+
 
 export const SignUp = () => {
     const dispatch = useDispatch()
@@ -26,8 +26,7 @@ export const SignUp = () => {
     }
     return (
         <div>
-            <Form
-                title="register"
+            <FormSignUp
                 handleClick={handleRegister}
             />
         </div>

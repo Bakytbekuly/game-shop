@@ -5,12 +5,12 @@ import "./RegisterPage.css"
 
 export const RegisterPage = () => {
     return (
-        <div>
-            <h1>Register</h1>
+        <div className='sign-up-wrapper'>
+
             <SignUp />
 
             <p>
-                Already have an account? <Link to="/login">Sign in</Link>
+                У Вас уже есть аккаунт? <Link to="/login" className='text-sign-up-link'>Sign in</Link>
 
             </p>
         </div>

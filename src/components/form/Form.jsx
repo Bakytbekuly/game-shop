@@ -5,6 +5,7 @@ export const Form = ({ title, handleClick }) => {
 
     const [email, SetEmail] = useState('')
     const [pass, setPass] = useState('')
+    console.log(email, pass);
     return (
         <div>
             <input
