@@ -5,6 +5,7 @@ import { BsFillPersonDashFill } from 'react-icons/bs'
 import { useAuth } from '../../hooks/use-auth'
 import { AuthRegButton } from '../auth-reg-button/AuthRegButton'
 import { logoOnOff, basketOff } from "../../store/slice/openClose"
+import { setFilterDataDelete, setInputTextDelete } from "../../store/slice/searchFilter"
 import "./UserLogo.css"
 
 export const UserLogo = ({ size }) => {
@@ -16,6 +17,8 @@ export const UserLogo = ({ size }) => {
         e.stopPropagation()
         dispatch(logoOnOff())
         dispatch(basketOff())
+        dispatch(setFilterDataDelete())
+        dispatch(setInputTextDelete())
     }
 
     return (

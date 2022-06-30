@@ -6,6 +6,7 @@ import { TiShoppingCart } from "react-icons/ti"
 import { BasketMenu } from "../basket-menu/BasketMenu"
 import { BasketBadge } from "../basket-badge/BasketBadge"
 import { basketOnOff, basketOff, logoOff } from "../../store/slice/openClose"
+import { setFilterDataDelete, setInputTextDelete } from "../../store/slice/searchFilter"
 import { useAuth } from "../../hooks/use-auth"
 import "./Basket.css"
 
@@ -20,6 +21,8 @@ export const Basket = () => {
         e.stopPropagation()
         dispatch(basketOff())
         dispatch(logoOff())
+        dispatch(setFilterDataDelete())
+        dispatch(setInputTextDelete())
         if (isAuth) {
             navigate("/order")
         }
@@ -30,6 +33,8 @@ export const Basket = () => {
         e.stopPropagation()
         dispatch(basketOnOff())
         dispatch(logoOff())
+        dispatch(setFilterDataDelete())
+        dispatch(setInputTextDelete())
     }
 
     return (

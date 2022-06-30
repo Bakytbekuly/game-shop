@@ -8,6 +8,7 @@ import { NotFoundPage } from "./pages/not-found-page/NotFoundPage"
 import { LoginPage } from "./pages/login-page/LoginPage"
 import { RegisterPage } from "./pages/register-page/RegisterPage"
 import { basketOff, logoOff } from "./store/slice/openClose"
+import { setFilterDataDelete, setInputTextDelete } from "./store/slice/searchFilter"
 
 
 
@@ -21,6 +22,8 @@ function App() {
   const handleClick = () => {
     dispatch(basketOff())
     dispatch(logoOff())
+    dispatch(setFilterDataDelete())
+    dispatch(setInputTextDelete())
   }
 
   return (
