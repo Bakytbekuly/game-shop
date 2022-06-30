@@ -8,7 +8,8 @@ import { NotFoundPage } from "./pages/not-found-page/NotFoundPage"
 import { LoginPage } from "./pages/login-page/LoginPage"
 import { RegisterPage } from "./pages/register-page/RegisterPage"
 import { basketOff, logoOff } from "./store/slice/openClose"
-import { FormSignIn } from "./components/form-sign-in/FormSignIn"
+
+
 
 // HOC
 
@@ -43,8 +44,8 @@ function App() {
         </div>
       </div>
     </BrowserRouter>
-    // <>
-    //   <FormSignIn /></>
+
+
   );
 }
 
