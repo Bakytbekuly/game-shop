@@ -7,7 +7,7 @@ import { setCurrentGame } from "../../store/slice/games"
 import { setInputText, setFilterDataSearch, setFilterDataDelete, setInputTextDelete } from "../../store/slice/searchFilter"
 import "./Search.css";
 
-function Search({ placeholder, data }) {
+function Search({ placeholder }) {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
