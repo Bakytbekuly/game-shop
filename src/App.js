@@ -9,6 +9,7 @@ import { LoginPage } from "./pages/login-page/LoginPage"
 import { RegisterPage } from "./pages/register-page/RegisterPage"
 import { basketOff, logoOff } from "./store/slice/openClose"
 import { setFilterDataDelete, setInputTextDelete } from "./store/slice/searchFilter"
+import Slider from "./components/slider/Slider"
 
 
 
@@ -33,7 +34,8 @@ function App() {
         <Header />
         <div className="App">
           <Routes>
-            <Route path='/' element={<HomePage />} />
+            <Route path='/catalog' element={<HomePage />} />
+            <Route path='/' element={<Slider />} />
             <Route path='/app/:title' element={<GamePage />} />
             <Route path='/order' element={
               <RequireAuth>

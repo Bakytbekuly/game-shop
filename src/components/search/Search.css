@@ -10,7 +10,7 @@
     border-bottom-right-radius: 0px;
     font-size: 18px;
     padding: 15px;
-    height: 15px;
+    height: 45px;
     width: 300px;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
@@ -20,12 +20,13 @@
 .searchIcon {
     height: 45px;
     width: 50px;
-    background-color: white;
+    background-color: rgb(85, 74, 74);
     display: grid;
     place-items: center;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
+    z-index: 2;
     /* background: rgb(80, 82, 84); */
 }
 

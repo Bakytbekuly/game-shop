@@ -8,6 +8,8 @@ export const GameBuy = ({ game }) => {
     const dispatch = useDispatch()
     const items = useSelector(state => state.basket.itemsInBasket)
     const isItemInBasket = items.some(item => item.id === game.id);
+
+
     const handleClick = (e) => {
         e.stopPropagation();
         if (isItemInBasket) {

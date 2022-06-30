@@ -21,3 +21,7 @@
     justify-content: space-between;
     margin-bottom: 15px;
 }
+
+.basket-menu_delete-all {
+    margin-bottom: 10px;
+}

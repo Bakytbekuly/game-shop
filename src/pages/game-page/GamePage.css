@@ -1,5 +1,13 @@
 .game-page_content {
     display: flex;
+    flex-wrap: wrap;
+
+}
+
+.game-page_content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .game-page_left {
@@ -12,6 +20,15 @@
 
 .game-page_buy-game {
     display: flex;
-    justify-content: flex-end;
+
     margin-top: 20px;
+}
+
+.game-page {
+    margin-left: 11%;
+    margin-right: 11%;
+}
+
+.game-page_title {
+    margin: 2%;
 }

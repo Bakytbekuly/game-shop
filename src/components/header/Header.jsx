@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import { Basket } from '../basket/Basket'
 import { UserLogo } from "../user-logo/UserLogo"
 import { Search } from "../search/Search"
-import { GAMES } from "../../constance/data-games"
+import { ButtonCatalog } from "../button-catalog/ButtonCatalog"
+import { SiUbisoft } from "react-icons/si"
 import "./Header.css"
 
 export const Header = () => {
@@ -10,16 +11,24 @@ export const Header = () => {
         <div className='header'>
 
             <div className="wrapper">
+                <div className='header-left-content'>
+                    <div className='logo-title-wrapper '>
+                        <Link to="/" className='header_store-title'>
+                            <SiUbisoft size={40} />
+                        </Link>
+                    </div>
+                    <div className='header-button-catalog'>
+                        <Link to="/catalog"><ButtonCatalog /></Link>
 
-                <div className='logo-title-wrapper '>
-                    <Link to="/" className='header_store-title'>GameStore.kz</Link>
+                    </div>
                 </div>
-                <div className='search-wrapper'>
-                    <Search data={GAMES} placeholder="Введите название игры" />
-                </div>
-                <div className="header_basket-btn-wrapper" >
 
 
+                <div className="header_basket-btn-wrapper header-right-content" >
+
+                    <div className='search-wrapper'>
+                        <Search placeholder="Введите название игры" />
+                    </div>
                     <div className='logo-user_wrapper'>
                         <UserLogo size={25} /></div>
                     <div className='basket-icon-wrapper'>

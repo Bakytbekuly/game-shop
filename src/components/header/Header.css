@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     padding: 2rem 0;
     background-color: black;
 
@@ -43,19 +43,39 @@
 }
 
 .logo-user_wrapper {
-    margin-right: 30%;
     cursor: pointer;
+    margin-right: 5%;
 }
 
 .basket-icon-wrapper {
     border: 1px solid white;
     padding: 5px;
     width: 40px;
-    height: 30px;
+    height: 40px;
     border-radius: 10px;
+
 
 }
 
 .search-wrapper {
-    margin-left: 35%;
+    margin-right: 3%;
+}
+
+.logo-title-wrapper {
+    margin-left: 4%;
+}
+
+.header-left-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-right-content {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4%;
+}
+
+.header-button-catalog {
+    margin-left: 10%;
 }
